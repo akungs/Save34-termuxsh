@@ -180,22 +180,23 @@ yt-dlp -a 'link.txt' \
 esac
 
 fi
-#echo "TUNGGU SEDANG MENGUNDUH 📩"
+
+echo "TUNGGU SEDANG MENGUNDUH 📩"
 if [[ "$choice" == "Music" ]]; then
 
 #read -p "Masukan URL: " url
 
-yt-dlp -a '$lin' \
+yt-dlp -a 'link.txt' \
 -x --audio-format mp3 \
 --audio-quality 0 \
 --downloader aria2c \
 --downloader-args "aria2c:-x16 -s16 -k1M" \
 
 fi
-#echo "TUNGGU SEDANG MENGUNDUH 📩"
+echo "TUNGGU SEDANG MENGUNDUH 📩"
 if [[ "$choice" == "Playlist" ]]; then
 
-yt-dlp -a '$lin' \
+yt-dlp -a 'link.txt' \
 --yes-playlist \
 -f "bv*+ba/b" \
 --downloader aria2c \
@@ -206,7 +207,7 @@ fi
 echo "TUNGGU SEDANG MENGUNDUH 📩"
 if [[ "$choice" == "TikTok" ]]; then
 
-yt-dlp -a '$lin' \
+yt-dlp -a 'link.txt' \
 --downloader aria2c \
 --downloader-args "aria2c:-x16 -s16 -k1M" \
 
